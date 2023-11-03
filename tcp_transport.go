@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	maxTCPFrameLength	int = 260
+	maxTCPFrameLength	int = 2000
 	mbapHeaderLength	int = 7
 )
 

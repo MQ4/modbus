@@ -1039,10 +1039,10 @@ func (mc *ModbusClient) readRegisters(addr uint16, quantity uint16, regType RegT
 		mc.logger.Error("quantity of registers is 0")
 	}
 
-	if quantity > 123 {
-		err = ErrUnexpectedParameters
-		mc.logger.Error("quantity of registers exceeds 123")
-	}
+	// if quantity > 123 {
+	// 	err = ErrUnexpectedParameters
+	// 	mc.logger.Error("quantity of registers exceeds 123")
+	// }
 
 	if uint32(addr) + uint32(quantity) - 1 > 0xffff {
 		err = ErrUnexpectedParameters
@@ -1073,10 +1073,10 @@ func (mc *ModbusClient) readRegisters(addr uint16, quantity uint16, regType RegT
 
 		// validate the byte count field
 		// (2 bytes per register * number of registers)
-		if uint(res.payload[0]) != 2 * uint(quantity) {
-			err = ErrProtocolError
-			return
-		}
+		// if uint(res.payload[0]) != 2 * uint(quantity) {
+		// 	err = ErrProtocolError
+		// 	return
+		// }
 
 		// remove the byte count field from the returned slice
 		bytes	= res.payload[1:]
