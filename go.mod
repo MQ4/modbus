@@ -1,4 +1,4 @@
-module github.com/simonvetter/modbus
+module github.com/MQ4/modbus
 
 go 1.16
 
